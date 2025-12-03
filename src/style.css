@@ -116,32 +116,11 @@ body {
             opacity: 1;
         }
 
-        .guitar-icon {
-            width: 150px;
-            height: 150px;
-            border: 2px solid #ff00ff;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: auto;
-            margin-top: 20px; /* Ajustado para evitar sobreposição no mobile */
-            background-color: #000;
-            animation: rotate-guitar 5s infinite linear;
-            box-shadow: 0 0 20px #ff00ff;
-            align-self: center; /* Centraliza no mobile */
-        }
-
-        @keyframes rotate-guitar {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .guitar-icon::before {
-            content: '🎸'; /* Ícone de guitarra como placeholder */
-            font-size: 4em;
-            color: #ff00ff;
-        }
+        .guitar-icon img {
+              width: 280px;
+              height: auto;
+              filter: drop-shadow(0 0 10px #ff00aa);
+            }
 
         /* Nova seção: Vídeo */
         .video-section {
@@ -377,4 +356,5 @@ body {
             .guitar-icon {
                 animation: none; /* Remove animação de rotação no mobile */
             }
+
         }
