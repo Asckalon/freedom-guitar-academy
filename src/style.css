@@ -1,0 +1,380 @@
+body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background-image: url('background.jpg'); /* Substitua por uma imagem de fundo escura com nuvens ou similar */
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        .logo::before {
+            content: '💀'; /* Ícone de caveira como placeholder */
+            margin-right: 10px;
+            font-size: 1.5em;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-comecar {
+            background-color: #ff00ff;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-comecar:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        .main-content {
+            text-align: left;
+            max-width: 800px;
+            padding: 50px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .main-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .title {
+            font-size: 3em;
+            color: #ff00ff;
+            margin: 0;
+            line-height: 1.1;
+            text-shadow: 0 0 10px #ff00ff;
+            animation: neon-glow 1.5s infinite alternate;
+            font-weight: 700;
+        }
+
+        @keyframes neon-glow {
+            from {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+            }
+            to {
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            }
+        }
+
+        .subtitle {
+            font-size: 1em;
+            color: #fff;
+            margin-top: 20px;
+            max-width: 600px;
+            opacity: 0;
+            transition: opacity 1s ease-out 0.5s;
+        }
+
+        .main-content.visible .subtitle {
+            opacity: 1;
+        }
+
+        .guitar-icon {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-top: 20px; /* Ajustado para evitar sobreposição no mobile */
+            background-color: #000;
+            animation: rotate-guitar 5s infinite linear;
+            box-shadow: 0 0 20px #ff00ff;
+            align-self: center; /* Centraliza no mobile */
+        }
+
+        @keyframes rotate-guitar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .guitar-icon::before {
+            content: '🎸'; /* Ícone de guitarra como placeholder */
+            font-size: 4em;
+            color: #ff00ff;
+        }
+
+        /* Nova seção: Vídeo */
+        .video-section {
+            text-align: center;
+            max-width: 800px;
+            padding: 30px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+        }
+
+        .video-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 640px;
+            height: 360px;
+            background-color: #000;
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #ff00ff;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff00ff;
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+
+        /* Seção: Slogan */
+        .slogan-section {
+            text-align: center;
+            max-width: 800px;
+            padding: 30px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out 0.7s, transform 1s ease-out 0.7s;
+        }
+
+        .slogan-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slogan {
+            font-size: 2em;
+            color: #ff00ff;
+            font-style: italic;
+            text-shadow: 0 0 10px #ff00ff;
+            animation: neon-glow 1.5s infinite alternate;
+            font-weight: 700;
+        }
+
+        /* Seção: Serviços */
+        .services-section {
+            max-width: 800px;
+            padding: 30px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out 1s, transform 1s ease-out 1s;
+        }
+
+        .services-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .services-title {
+            font-size: 2em;
+            color: #ff00ff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff00ff;
+            font-weight: 700;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .services-list li {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #ff00ff;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-list li::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,0,255,0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .services-list li:hover::before {
+            opacity: 1;
+        }
+
+        .services-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px #ff00ff;
+            border-color: #ff69ff;
+        }
+
+        .services-list li strong {
+            display: block;
+            font-size: 1.2em;
+            color: #ff00ff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        /* Outras seções */
+        .news-section, .events-section, .gallery-section, .about-section {
+            max-width: 800px;
+            padding: 30px 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out 1.5s, transform 1s ease-out 1.5s;
+        }
+
+        .news-section.visible, .events-section.visible, .gallery-section.visible, .about-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #ff00ff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #ff00ff;
+            font-weight: 700;
+        }
+
+        .news-list, .events-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .news-list li, .events-list li {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ff00ff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .news-list li:hover, .events-list li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px #ff00ff;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ff00ff;
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        /* Media queries para responsividade */
+        @media (min-width: 768px) {
+            .main-content {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .title-section {
+                max-width: 60%;
+            }
+
+            .guitar-icon {
+                margin-top: 0;
+                margin-left: 20px;
+                align-self: auto;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .title {
+                font-size: 2.5em; /* Reduz tamanho do título no mobile */
+            }
+
+            .slogan {
+                font-size: 1.5em; /* Reduz slogan no mobile */
+            }
+
+            .video-placeholder {
+                height: 200px; /* Ajusta altura do vídeo no mobile */
+            }
+
+            .services-list {
+                grid-template-columns: 1fr; /* Uma coluna no mobile */
+            }
+
+            .gallery {
+                grid-template-columns: 1fr; /* Uma coluna para galeria no mobile */
+            }
+
+            .guitar-icon {
+                animation: none; /* Remove animação de rotação no mobile */
+            }
+        }
